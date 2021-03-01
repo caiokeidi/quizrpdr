@@ -1,10 +1,16 @@
 
 import './App.css';
+import MainContent from './components/MainContent/MainContent';
+import SideBar from './components/SideBar/SideBar';
+
 
 function App() {
   return (
     <>
-      <h1>QUIZ RPDR</h1>
+    <section className='content'>
+      <MainContent/>
+      <SideBar/>
+    </section>
     </>
   );
 }

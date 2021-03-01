@@ -1,0 +1,8 @@
+.SideBar{
+    width: 25%;
+    height: 100%;
+    background-color: rgb(167, 23, 167);
+    border-radius: 20px 0px 0px 20px;
+
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.212);
+}

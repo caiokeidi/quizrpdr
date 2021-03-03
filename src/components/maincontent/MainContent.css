@@ -23,7 +23,7 @@
 
 .img_box{
     width: 70%;
-    height: 25%;
+    height: 35%;
     background-color: brown;
     border-radius: 10px;
     
@@ -36,7 +36,33 @@
 }
 
 .div_respostas{
-    width: 70%;
+    width: 90%;
     height: 40%;
-    background-color: cornflowerblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
 }
+
+.div_respostas_linha{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+
+}
+
+.btm_respostas{
+    width: 45%;
+    height: 90%;
+    background-color: rgb(253, 151, 190);
+    border-radius: 10px;
+
+    position: relative;
+
+    box-shadow: 5px 5px 0px rgb(187, 187, 187)
+}
+

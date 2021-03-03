@@ -16,7 +16,11 @@ function MainContent(){
                         className='img_pergunta'
                         />
                 </div>
-                <div className='div_pergunta'></div>
+                <div className='div_pergunta'>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                        Ipsam recusandae modi facere iusto, consequuntur illo 
+                        enim voluptas expedita doloribus?</p>
+                </div>
                 <div className='div_respostas'>
                     <div className='div_respostas_linha'>
                         <div onClick={resposta_escolhida} className='btm_respostas' id='1'></div>

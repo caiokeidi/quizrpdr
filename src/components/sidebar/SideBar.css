@@ -7,7 +7,7 @@
     box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.212);
 
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     
@@ -61,6 +61,18 @@ ul{
 
     font-size: 25px;
     font-weight: 700;
-    color: rgb(199, 169, 1);
+    color: rgb(243, 208, 11);
     padding: 10px 0px;
+}
+
+
+/* Redes Sociais */
+.div_redes_sociais{
+    display: flex;
+    align-items: center;
+}
+.div_redes_sociais img{
+    width: 45px;
+    height: 45px;
+    margin:15px;
 }

@@ -23,12 +23,12 @@ function MainContent(){
                 </div>
                 <div className='div_respostas'>
                     <div className='div_respostas_linha'>
-                        <div onClick={resposta_escolhida} className='btm_respostas' id='1'></div>
-                        <div onClick={resposta_escolhida} className='btm_respostas' id='2'></div>
+                        <div onClick={resposta_escolhida} className='btm_respostas' id='1'>Sasha Velour</div>
+                        <div onClick={resposta_escolhida} className='btm_respostas' id='2'>Yvie Oddly</div>
                     </div>
                     <div className='div_respostas_linha'>
-                        <div onClick={resposta_escolhida} className='btm_respostas' id='1'></div>
-                        <div onClick={resposta_escolhida} className='btm_respostas' id='2'></div>
+                        <div onClick={resposta_escolhida} className='btm_respostas' id='1'>Brooke Lynn Hytes</div>
+                        <div onClick={resposta_escolhida} className='btm_respostas' id='2'>Aquaria</div>
                     </div>
                 </div>
             </div>

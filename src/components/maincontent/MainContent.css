@@ -30,6 +30,11 @@
     margin: 10px 0px 10px 0px;
 }
 
+.header_perguntas h2{
+    margin: 0;
+    font-size: 35px;
+}
+
 
 .img_box{
     width: 70%;
@@ -49,7 +54,7 @@
 .div_pergunta{
     width: 90%;
     height: 20%;
-    background-color:burlywood;
+
     padding: 5px 10px;
     display: flex;
     justify-content: center;
@@ -97,7 +102,14 @@
 
     position: relative;
 
-    box-shadow: 5px 5px 0px rgb(187, 187, 187)
+    box-shadow: 5px 5px 0px rgb(187, 187, 187);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 20px;
+    
 }
 
 .btm_respostas:hover{

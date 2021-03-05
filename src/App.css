@@ -1,7 +1,8 @@
 .App {
   text-align: center;
-  
 }
+
+*{text-align: center;}
 
 .content{
   display: flex;
@@ -15,4 +16,5 @@
 body{
   background-image: url('assets/imgs/geral/fundo_amarelo_rosa.jpg');
 }
+
 

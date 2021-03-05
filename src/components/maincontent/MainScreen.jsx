@@ -4,8 +4,8 @@ import "./MainContent.css";
 function MainScreen() {
   return (
     <section className="MainContent">
-      <div className="MainBox">
-        <h1>Selecione uma categoria ao lado</h1>
+      <div className="MainBoxScreen">
+        <h1 className>Selecione uma categoria ao lado</h1>
           
       </div>
     </section>

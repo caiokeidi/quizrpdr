@@ -2,39 +2,37 @@ import React, { useState } from "react";
 import "./MainContent.css";
 
 function MainContent(props) {
-    const[n, setN] = useState(0)
-    var pergunta = props.arrPerguntas[n]
+  const [n, setN] = useState(0);
+  var pergunta = props.arrPerguntas[n];
 
-    function proxima(){
-        setN(n+1);
+  function proxima() {
+    for (let i = 1; i <= 4; i++) {
+        document.getElementById(i).classList = 'btm_respostas';
     }
+    setN(n + 1);
+  }
 
-    function resposta_escolhida(btm) {
-        if(btm.target.id === pergunta.correta.toString()){
-            console.log('Certa!')
+  function resposta_escolhida(btm) {
+    for (let i = 1; i <= 4; i++) {
+      if (btm.target.id === pergunta.correta.toString()) {
+        if (i == pergunta.correta) {
+          btm_correto(i)
+        } else {
+          btm_desativado(i);
+        }
+      } else {
+        if (i == pergunta.correta) {
+          btm_corretoDesativado(i);
+        } else if (i == btm.target.id) {
+          btm_incorreto(i);
+        } else {
+          btm_desativado(i);
         }
       }
+    }
+  }
 
-//   const [pergunta, setPergunta] = useState({
-//     n: 0,
-//     img: require("../../assets/imgs/geral/sasha.jpeg"),
-//     pergunta: "Qual a idade de Sasha Velour?",
-//     1: "0 anos",
-//     2: "36 anos",
-//     3: "28 anos",
-//     4: "29 anos",
-//     correta: 4,
-//   });
-  
-//   if (props.arrPerguntas[0] !== pergunta && props.arrPerguntas !== "") {
-//     console.log("aqui");
-//     setPergunta(props.arrPerguntas[0]);
-//   }
 
-//   function proxima() {
-//     var n = pergunta.n;
-//     setPergunta(props.arrPerguntas[n])
-//   }
 
   return (
     <section className="MainContent">
@@ -80,6 +78,19 @@ function MainContent(props) {
   );
 }
 
+function btm_correto(n){
+    document.getElementById(n).classList.add("correto");
+}
 
+function btm_incorreto(n){
+    document.getElementById(n).classList.add("incorreto");
+}
 
+function btm_corretoDesativado(n){
+    document.getElementById(n).classList.add("corretoDesativado");
+}
+
+function btm_desativado(n){
+    document.getElementById(n).classList.add("desativado");
+}
 export default MainContent;

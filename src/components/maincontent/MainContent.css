@@ -140,19 +140,25 @@
     color: white;
 }
 
-.correta{
+.correto{
     background-color: rgb(9, 121, 9);
     color: white;
 }
 
-.errada{
+.incorreto{
     background-color: tomato;
     color: white;
 }
 
-.desativada{
+.desativado{
     background-color: gray;
     color: black;
+}
+
+.corretaDesativado{
+    background-color: rgb(63, 75, 62);
+    color: black;
+    border: 3px solid green;
 }
 
 

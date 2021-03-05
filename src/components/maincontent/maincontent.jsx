@@ -9,6 +9,12 @@ function MainContent(props) {
         setN(n+1);
     }
 
+    function resposta_escolhida(btm) {
+        if(btm.target.id === pergunta.correta.toString()){
+            console.log('Certa!')
+        }
+      }
+
 //   const [pergunta, setPergunta] = useState({
 //     n: 0,
 //     img: require("../../assets/imgs/geral/sasha.jpeg"),
@@ -56,16 +62,16 @@ function MainContent(props) {
             </div>
           </div>
           <div className="div_respostas_linha">
-            <div onClick={resposta_escolhida} className="btm_respostas" id="1">
+            <div onClick={resposta_escolhida} className="btm_respostas" id="3">
               {pergunta[3]}
             </div>
-            <div onClick={resposta_escolhida} className="btm_respostas" id="2">
+            <div onClick={resposta_escolhida} className="btm_respostas" id="4">
               {pergunta[4]}
             </div>
           </div>
           <div className="div_respostas_linha">
-            <div onClick={proxima} className="btm_respostas" id="1">
-              {pergunta[3]}
+            <div onClick={proxima} className="btm_respostas btm_proxima" id="1">
+              Próxima
             </div>
           </div>
         </div>
@@ -74,8 +80,6 @@ function MainContent(props) {
   );
 }
 
-function resposta_escolhida(btm) {
-  console.log(btm.id);
-}
+
 
 export default MainContent;

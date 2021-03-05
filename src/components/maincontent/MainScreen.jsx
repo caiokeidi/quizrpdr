@@ -5,7 +5,7 @@ function MainScreen() {
   return (
     <section className="MainContent">
       <div className="MainBoxScreen">
-        <h1 className>Selecione uma categoria ao lado</h1>
+        <h1>Selecione uma categoria ao lado</h1>
           
       </div>
     </section>

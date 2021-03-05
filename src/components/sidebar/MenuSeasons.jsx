@@ -3,7 +3,7 @@ import './SideBar.css'
 
 function MenuSeasons(props){
     function btmSelecionado(btm){
-        console.log(btm.target.id)
+        props.categoriaSelecionada(btm.target.id)
     }
 
     return(

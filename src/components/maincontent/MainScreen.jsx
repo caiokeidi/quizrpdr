@@ -1,34 +1,7 @@
 import React, { useState } from "react";
 import "./MainContent.css";
 
-function MainContent(props) {
-    const[n, setN] = useState(0)
-    var pergunta = props.arrPerguntas[n]
-
-    function proxima(){
-        setN(n+1);
-    }
-
-//   const [pergunta, setPergunta] = useState({
-//     n: 0,
-//     img: require("../../assets/imgs/geral/sasha.jpeg"),
-//     pergunta: "Qual a idade de Sasha Velour?",
-//     1: "0 anos",
-//     2: "36 anos",
-//     3: "28 anos",
-//     4: "29 anos",
-//     correta: 4,
-//   });
-  
-//   if (props.arrPerguntas[0] !== pergunta && props.arrPerguntas !== "") {
-//     console.log("aqui");
-//     setPergunta(props.arrPerguntas[0]);
-//   }
-
-//   function proxima() {
-//     var n = pergunta.n;
-//     setPergunta(props.arrPerguntas[n])
-//   }
+function MainScreen() {
 
   return (
     <section className="MainContent">

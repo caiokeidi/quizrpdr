@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import MainContent from "./components/MainContent/MainContent";
+import MainScreen from "./components/MainContent/MainScreen";
 import SideBar from "./components/SideBar/SideBar";
 import perguntas from './data/perguntas/index'
 
@@ -9,7 +10,7 @@ function App() {
 
   function mainContent(){
     if(arrPerguntas ===''){
-      console.log('empty')
+      return <MainScreen/>
     }else{
       return <MainContent arrPerguntas={arrPerguntas}/>
     }

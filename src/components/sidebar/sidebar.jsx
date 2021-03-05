@@ -18,11 +18,11 @@ function SideBar(props) {
         <MenuSeasons categoriaSelecionada = {props.categoriaSelecionada}/>
 
         <div className="div_redes_sociais">
-          <a href="#">
+          <a href="https://facebook.com">
             <img src={email_icon.default} alt="email icon" />
           </a>
 
-          <a href='#'>
+          <a href='https://facebook.com'>
             <img src={instagram_icon.default} alt="instagram icon" />
           </a>
         </div>

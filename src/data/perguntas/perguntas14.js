@@ -1,4 +1,3 @@
-
 const p_season14 = [
   {
     n: 1,
@@ -13,12 +12,12 @@ const p_season14 = [
   {
     n: 2,
     img: require("../../assets/imgs/geral/sasha.jpeg"),
-    pergunta: "Quantos Wins Bebe Zahara Benet teve na?",
+    pergunta: "Quantos Wins Bebe Zahara Benet teve na Season 1?",
     1: "3 wins",
     2: "2 wins",
     3: "1 win",
     4: "nenhum",
-    correta: 4,
+    correta: 2,
   },
 ];
 

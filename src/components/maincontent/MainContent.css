@@ -112,13 +112,13 @@
     
 }
 
-.btm_respostas:hover{
+.btm_ativo:hover{
     animation-name: respostas_hover;
     animation-duration: 300ms;
     animation-fill-mode: both;
 }
 
-.btm_respostas:active{
+.btm_ativo:active{
     background-color: rgb(248, 101, 158); 
     top:5px; left:5px;
 }

@@ -7,32 +7,42 @@ function MainContent(props) {
 
   function proxima() {
     for (let i = 1; i <= 4; i++) {
-        document.getElementById(i).classList = 'btm_respostas';
+      document.getElementById(i).classList = "btm_respostas";
+      ativa_btm(i);
     }
     setN(n + 1);
   }
 
   function resposta_escolhida(btm) {
-    for (let i = 1; i <= 4; i++) {
-      if (btm.target.id === pergunta.correta.toString()) {
-        if (i == pergunta.correta) {
-          btm_correto(i)
+    if (estaAtivo(btm)) {
+      for (let i = 1; i <= 4; i++) {
+        desativa_btm(i);
+        if (btm.target.id === pergunta.correta.toString()) {
+          if (i === pergunta.correta) {
+            btm_correto(i);
+          } else {
+            btm_desativado(i);
+          }
         } else {
-          btm_desativado(i);
-        }
-      } else {
-        if (i == pergunta.correta) {
-          btm_corretoDesativado(i);
-        } else if (i == btm.target.id) {
-          btm_incorreto(i);
-        } else {
-          btm_desativado(i);
+          if (i === pergunta.correta) {
+            btm_corretaDesativado(i);
+          } else if (i.toString() === btm.target.id) {
+            btm_incorreto(i);
+          } else {
+            btm_desativado(i);
+          }
         }
       }
     }
   }
 
+  function ativa_btm(n) {
+    document.getElementById(n).setAttribute("ativo", "true");
+  }
 
+  function desativa_btm(n) {
+    document.getElementById(n).setAttribute("ativo", "false");
+  }
 
   return (
     <section className="MainContent">
@@ -52,23 +62,47 @@ function MainContent(props) {
         </div>
         <div className="div_respostas">
           <div className="div_respostas_linha">
-            <div onClick={resposta_escolhida} className="btm_respostas" id="1">
+            <div
+              onClick={resposta_escolhida}
+              className="btm_respostas btm_ativo"
+              id="1"
+              ativo="true"
+            >
               {pergunta[1]}
             </div>
-            <div onClick={resposta_escolhida} className="btm_respostas" id="2">
+            <div
+              onClick={resposta_escolhida}
+              className="btm_respostas btm_ativo"
+              id="2"
+              ativo="true"
+            >
               {pergunta[2]}
             </div>
           </div>
           <div className="div_respostas_linha">
-            <div onClick={resposta_escolhida} className="btm_respostas" id="3">
+            <div
+              onClick={resposta_escolhida}
+              className="btm_respostas btm_ativo"
+              id="3"
+              ativo="true"
+            >
               {pergunta[3]}
             </div>
-            <div onClick={resposta_escolhida} className="btm_respostas" id="4">
+            <div
+              onClick={resposta_escolhida}
+              className="btm_respostas btm_ativo"
+              id="4"
+              ativo="true"
+            >
               {pergunta[4]}
             </div>
           </div>
           <div className="div_respostas_linha">
-            <div onClick={proxima} className="btm_respostas btm_proxima" id="1">
+            <div
+              onClick={proxima}
+              className="btm_respostas btm_ativo btm_proxima"
+              id="submit"
+            >
               Próxima
             </div>
           </div>
@@ -78,19 +112,24 @@ function MainContent(props) {
   );
 }
 
-function btm_correto(n){
-    document.getElementById(n).classList.add("correto");
+function estaAtivo(btm){
+    return btm.target.getAttribute('ativo') === "true"
 }
 
-function btm_incorreto(n){
-    document.getElementById(n).classList.add("incorreto");
+function btm_correto(n) {
+  document.getElementById(n).classList.add("correto");
 }
 
-function btm_corretoDesativado(n){
-    document.getElementById(n).classList.add("corretoDesativado");
+function btm_incorreto(n) {
+  document.getElementById(n).classList.add("incorreto");
 }
 
-function btm_desativado(n){
-    document.getElementById(n).classList.add("desativado");
+function btm_corretaDesativado(n) {
+  document.getElementById(n).classList.add("corretaDesativado");
 }
+
+function btm_desativado(n) {
+  document.getElementById(n).classList.add("desativado");
+}
+
 export default MainContent;

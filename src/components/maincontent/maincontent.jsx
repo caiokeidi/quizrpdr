@@ -1,12 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import "./MainContent.css";
 
 function MainContent(props) {
-  const [n, setN] = useState(0);
+  var n = props.n;
+  var setN = props.setN;
   var pergunta = props.arrPerguntas[n];
   var acertos = props.acertos;
   var setAcertos = props.setAcertos;
   var setFim = props.setFim;
+
+  useEffect(() => {
+      if(n === 0 && submitDesativado()){
+          console.log('useEffect')
+          desativa_submit()
+          for (let i = 1; i <= 4; i++) {
+            document.getElementById(i).classList = "btm_respostas";
+            ativa_btm(i);
+            
+        }
+      }
+  });
+
+  function submitDesativado(){
+      //Feito para verificar se o submit está desativado na hora de atualizar os elementos no useEffect acim
+    //Sem essa verificação ele atualiza sempre na primeira questão ao clicar na resposta correta.
+    //Fazendo isso evitamos esse comportamento.
+    var checarSeDesativado = document.getElementById('submit').classList.contains('desativado');
+    return checarSeDesativado;
+  }
 
   function proxima() {
     console.log(acertos);
@@ -32,6 +53,7 @@ function MainContent(props) {
       for (let i = 1; i <= 4; i++) {
         desativa_btm(i);
         if (btm.target.id === pergunta.correta.toString()) {
+            console.log('correta')
           if (i === pergunta.correta) {
             btm_correto(i);
             setAcertos(acertos + 1);
@@ -60,7 +82,7 @@ function MainContent(props) {
         <div className="img_box">
           <img
             src={pergunta.img.default}
-            alt="Foto da Sasha Velour tirando as pétalas da peruca"
+            alt="Foto da Pergunta"
             className="img_pergunta"
           />
         </div>

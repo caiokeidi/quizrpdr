@@ -10,6 +10,7 @@ function App() {
   const [arrPerguntas, setArrPerguntas] = useState("");
   const [acertos, setAcertos] = useState(0);
   const [fim, setFim] = useState(false);
+  const [n, setN] = useState(0);
 
   function mainContent() {
     if (arrPerguntas === "") {
@@ -21,6 +22,8 @@ function App() {
           acertos={acertos}
           setAcertos={setAcertos}
           setFim={setFim}
+          n = {n}
+          setN = {setN}
         />
       );
     } else {
@@ -29,7 +32,11 @@ function App() {
   }
 
   function categoriaSelecionada(id) {
+    setFim(false)
+    setAcertos(0)
+    setN(0)
     setArrPerguntas(perguntas[id]);
+
   }
 
   return (

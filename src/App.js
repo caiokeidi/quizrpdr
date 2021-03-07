@@ -11,23 +11,20 @@ function App() {
   const [acertos, setAcertos] = useState(0);
   const [fim, setFim] = useState(false);
 
-  
   function mainContent() {
     if (arrPerguntas === "") {
       return <MainScreen />;
-    } else if (!fim){
+    } else if (!fim) {
       return (
-        <MainContent                                      
+        <MainContent
           arrPerguntas={arrPerguntas}
           acertos={acertos}
           setAcertos={setAcertos}
-          setFim = {setFim}
+          setFim={setFim}
         />
       );
     } else {
-      return(
-        <Resultado/>
-      )
+      return <Resultado acertos={acertos} />;
     }
   }
 

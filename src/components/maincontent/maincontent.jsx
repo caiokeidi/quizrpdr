@@ -4,8 +4,11 @@ import "./MainContent.css";
 function MainContent(props) {
   const [n, setN] = useState(0);
   var pergunta = props.arrPerguntas[n];
+  var acertos = props.acertos;
+  var setAcertos = props.setAcertos;
 
   function proxima() {
+    console.log(acertos)
     for (let i = 1; i <= 4; i++) {
       document.getElementById(i).classList = "btm_respostas";
       ativa_btm(i);
@@ -20,6 +23,8 @@ function MainContent(props) {
         if (btm.target.id === pergunta.correta.toString()) {
           if (i === pergunta.correta) {
             btm_correto(i);
+            setAcertos(acertos + 1);
+            
           } else {
             btm_desativado(i);
           }

@@ -112,10 +112,12 @@ function MainContent(props) {
 
 function ativa_btm(n) {
   document.getElementById(n).setAttribute("ativo", "true");
+  document.getElementById(n).classList.add('btm_ativo')
 }
 
 function desativa_btm(n) {
   document.getElementById(n).setAttribute("ativo", "false");
+  document.getElementById(n).classList.remove('btm_ativo')
 }
 
 function estaAtivo(btm) {

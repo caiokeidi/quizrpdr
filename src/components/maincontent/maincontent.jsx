@@ -8,12 +8,14 @@ function MainContent(props) {
   var setAcertos = props.setAcertos;
 
   function proxima() {
-    console.log(acertos)
-    for (let i = 1; i <= 4; i++) {
-      document.getElementById(i).classList = "btm_respostas";
-      ativa_btm(i);
+    console.log(acertos);
+    if (estaPronto()) {
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById(i).classList = "btm_respostas";
+        ativa_btm(i);
+      }
+      setN(n + 1);
     }
-    setN(n + 1);
   }
 
   function resposta_escolhida(btm) {
@@ -24,7 +26,6 @@ function MainContent(props) {
           if (i === pergunta.correta) {
             btm_correto(i);
             setAcertos(acertos + 1);
-            
           } else {
             btm_desativado(i);
           }
@@ -41,19 +42,11 @@ function MainContent(props) {
     }
   }
 
-  function ativa_btm(n) {
-    document.getElementById(n).setAttribute("ativo", "true");
-  }
-
-  function desativa_btm(n) {
-    document.getElementById(n).setAttribute("ativo", "false");
-  }
-
   return (
     <section className="MainContent">
       <div className="MainBox">
         <div className="header_perguntas">
-          <h2>PERGUNTA 1</h2>
+          <h2>PERGUNTA {pergunta.n.toString()}</h2>
         </div>
         <div className="img_box">
           <img
@@ -117,8 +110,20 @@ function MainContent(props) {
   );
 }
 
-function estaAtivo(btm){
-    return btm.target.getAttribute('ativo') === "true"
+function ativa_btm(n) {
+  document.getElementById(n).setAttribute("ativo", "true");
+}
+
+function desativa_btm(n) {
+  document.getElementById(n).setAttribute("ativo", "false");
+}
+
+function estaAtivo(btm) {
+  return btm.target.getAttribute("ativo") === "true";
+}
+
+function estaPronto() {
+  return document.getElementById("1").getAttribute("ativo") === "false";
 }
 
 function btm_correto(n) {

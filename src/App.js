@@ -14,7 +14,7 @@ function App() {
       return <MainScreen />;
     } else {
       return (
-        <MainContent
+        <MainContent                                      
           arrPerguntas={arrPerguntas}
           acertos={acertos}
           setAcertos={setAcertos}

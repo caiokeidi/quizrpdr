@@ -97,7 +97,7 @@ const p_season58 = [
       2: "Rusical",
       3: "Divine Inspiration",
       4: "Ru Hollywood Stories",
-      correta: 3,
+      correta: 4,
     },
   ];
   

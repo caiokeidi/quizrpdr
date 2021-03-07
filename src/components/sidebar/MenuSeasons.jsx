@@ -12,7 +12,7 @@ function MenuSeasons(props){
             <ul>
 
             <li><button onClick={btmSelecionado} id='0' className='menuSeasons_button'>SEASON 1 - 4</button></li>
-            <li><button className='menuSeasons_button'>SEASON 5 - 8</button></li>
+            <li><button onClick={btmSelecionado} id='1' className='menuSeasons_button'>SEASON 5 - 8</button></li>
             <li><button className='menuSeasons_button'>SEASON 9 - 12</button></li>
             <li><button className='menuSeasons_button'>ALL STARS</button></li>
             <li><button className='menuSeasons_button'>ALL SEASONS</button></li>

@@ -6,20 +6,29 @@ function MainContent(props) {
   var pergunta = props.arrPerguntas[n];
   var acertos = props.acertos;
   var setAcertos = props.setAcertos;
+  var setFim = props.setFim;
 
   function proxima() {
     console.log(acertos);
     if (estaPronto()) {
-      for (let i = 1; i <= 4; i++) {
-        document.getElementById(i).classList = "btm_respostas";
-        ativa_btm(i);
+      if (pergunta.n < 10) {
+        desativa_submit();
+
+        for (let i = 1; i <= 4; i++) {
+          document.getElementById(i).classList = "btm_respostas";
+          ativa_btm(i);
+        }
+        setN(n + 1);
+      } else {
+        setFim(true);
       }
-      setN(n + 1);
     }
   }
 
   function resposta_escolhida(btm) {
     if (estaAtivo(btm)) {
+      ativa_submit();
+
       for (let i = 1; i <= 4; i++) {
         desativa_btm(i);
         if (btm.target.id === pergunta.correta.toString()) {
@@ -98,7 +107,7 @@ function MainContent(props) {
           <div className="div_respostas_linha">
             <div
               onClick={proxima}
-              className="btm_respostas btm_ativo btm_proxima"
+              className="btm_respostas btm_proxima desativado"
               id="submit"
             >
               Próxima
@@ -112,12 +121,22 @@ function MainContent(props) {
 
 function ativa_btm(n) {
   document.getElementById(n).setAttribute("ativo", "true");
-  document.getElementById(n).classList.add('btm_ativo')
+  document.getElementById(n).classList.add("btm_ativo");
 }
 
 function desativa_btm(n) {
   document.getElementById(n).setAttribute("ativo", "false");
-  document.getElementById(n).classList.remove('btm_ativo')
+  document.getElementById(n).classList.remove("btm_ativo");
+}
+
+function ativa_submit() {
+  document.getElementById("submit").classList.add("btm_ativo");
+  document.getElementById("submit").classList.remove("desativado");
+}
+
+function desativa_submit() {
+  document.getElementById("submit").classList.remove("btm_ativo");
+  document.getElementById("submit").classList.add("desativado");
 }
 
 function estaAtivo(btm) {

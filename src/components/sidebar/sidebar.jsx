@@ -6,7 +6,6 @@ import MenuSeasons from "./MenuSeasons";
 function SideBar(props) {
   var email_icon = require("../../assets/imgs/geral/icons/email.png");
   var instagram_icon = require("../../assets/imgs/geral/icons/insta.png");
-  
 
   return (
     <>
@@ -15,14 +14,10 @@ function SideBar(props) {
           <img className="logo_rpdr" src={logo} alt="Logo"></img>
           <p className="sub_title">QUIZ</p>
         </div>
-        <MenuSeasons categoriaSelecionada = {props.categoriaSelecionada}/>
+        <MenuSeasons categoriaSelecionada={props.categoriaSelecionada} />
 
         <div className="div_redes_sociais">
           <a href="https://facebook.com">
-            <img src={email_icon.default} alt="email icon" />
-          </a>
-
-          <a href='https://facebook.com'>
             <img src={instagram_icon.default} alt="instagram icon" />
           </a>
         </div>

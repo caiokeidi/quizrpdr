@@ -11,7 +11,6 @@ function MainContent(props) {
 
   useEffect(() => {
       if(n === 0 && submitDesativado()){
-          console.log('useEffect')
           desativa_submit()
           for (let i = 1; i <= 4; i++) {
             document.getElementById(i).classList = "btm_respostas";
